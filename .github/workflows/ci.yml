@@ -28,4 +28,6 @@ jobs:
           cd healthcheck_ms
           PYTHONPATH=src pytest tests/acceptance
       - name: Build Docker image
-        run: run: docker build -t health-check-service -f healthcheck_ms/Dockerfile .
+        run: |
+          cd healthcheck_ms
+          docker build -t health-check-service .
