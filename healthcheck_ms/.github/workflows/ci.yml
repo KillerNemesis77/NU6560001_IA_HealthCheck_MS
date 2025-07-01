@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ main, develop, feature/*, release/* ]
+    branches: [ main, develop, feature/health-check-endpoint, release/v1.0.0 ]
   pull_request:
     branches: [ main, develop ]
 
