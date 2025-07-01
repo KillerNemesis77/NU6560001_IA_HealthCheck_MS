@@ -22,11 +22,11 @@ jobs:
       - name: Run unit tests
         run: |
           cd healthcheck_ms
-          pytest tests/unit
+          PYTHONPATH=src pytest tests/unit
       - name: Run acceptance tests
         run: |
           cd healthcheck_ms
-          pytest tests/acceptance
+          PYTHONPATH=src pytest tests/acceptance
       - name: Build Docker image
         run: |
           cd healthcheck_ms
