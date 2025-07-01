@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ main, develop, feature/*, release/* ]
+    branches: [ main, develop, feature/health-check-endpoint, release/v1.0.0 ]
   pull_request:
     branches: [ main, develop ]
 
@@ -17,18 +17,13 @@ jobs:
           python-version: '3.11'
       - name: Install dependencies
         run: |
-          cd healthcheck_ms
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Run unit tests
         run: |
-          cd healthcheck_ms
-          pytest tests/unit
+        pytest tests/unit
       - name: Run acceptance tests
-        run: |
-          cd healthcheck_ms
-          pytest tests/acceptance
+        run: pytest tests/acceptance
       - name: Build Docker image
         run: |
-          cd healthcheck_ms
-          docker build -t health-check-service .
+        docker build -t health-check-service .
