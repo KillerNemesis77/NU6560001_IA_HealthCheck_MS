@@ -2,7 +2,7 @@
 
 This is a simple Python microservice that implements a health check endpoint following clean architecture principles.
 
-## Project Structure
+## Project Structure =>
 
 ```
 python-microservice
