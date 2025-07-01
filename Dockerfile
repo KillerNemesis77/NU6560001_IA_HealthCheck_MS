@@ -5,7 +5,7 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY src/app ./src/app
+COPY healthcheck_ms/src/app ./src/app
 
 EXPOSE 5000
 
